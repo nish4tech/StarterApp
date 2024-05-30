@@ -54,7 +54,7 @@ class MainActivity : ComponentActivity() {
                     bottomBar = {
                         NavigationBar {
                             items.forEach { item ->
-                                val isSelected = item.title.lowercase() ==
+                                val isSelected = item.target.toString() ==
                                         navBackStackEntry?.destination?.route
                                 NavigationBarItem(
                                     selected = isSelected,
@@ -189,7 +189,11 @@ fun ManageFundsNavHost() {
 
 sealed class Target {
     @Serializable
-    data object NavHostHome : Target()
+    data object NavHostHome : Target() {
+        override fun toString(): String {
+            return "com.ip.mobile.Target.NavHostHome"
+        }
+    }
 
     @Serializable
     data object ScreenHome : Target()
@@ -198,7 +202,11 @@ sealed class Target {
     data class ScreenAccountDetails(val accountId: Int) : Target()
 
     @Serializable
-    data object NavHostSettings : Target()
+    data object NavHostSettings : Target() {
+        override fun toString(): String {
+            return "com.ip.mobile.Target.NavHostSettings"
+        }
+    }
 
     @Serializable
     data object ScreenSettings : Target()
@@ -207,7 +215,11 @@ sealed class Target {
     data object ScreenSettingDetails : Target()
 
     @Serializable
-    data object NavHostManageFunds : Target()
+    data object NavHostManageFunds : Target() {
+        override fun toString(): String {
+            return "com.ip.mobile.Target.NavHostManageFunds"
+        }
+    }
 
     @Serializable
     data object ScreenManageFunds : Target()
