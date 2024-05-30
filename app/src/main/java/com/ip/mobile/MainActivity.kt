@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
                     bottomBar = {
                         NavigationBar {
                             items.forEach { item ->
-                                val isSelected = item.target.toString() ==
+                                val isSelected = item.target.javaClass.canonicalName ==
                                         navBackStackEntry?.destination?.route
                                 NavigationBarItem(
                                     selected = isSelected,
