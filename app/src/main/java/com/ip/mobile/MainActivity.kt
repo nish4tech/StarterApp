@@ -47,60 +47,62 @@ class MainActivity : ComponentActivity() {
             IpMobileTheme {
                 val rootNavController = rememberNavController()
                 val navBackStackEntry by rootNavController.currentBackStackEntryAsState()
-                Surface(
+
+                Scaffold(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Scaffold(
-                        bottomBar = {
-                            NavigationBar {
-                                items.forEach { item ->
-                                    val isSelected = item.title.lowercase() ==
-                                            navBackStackEntry?.destination?.route
-                                    NavigationBarItem(
-                                        selected = isSelected,
-                                        label = {
-                                            Text(text = item.title)
-                                        },
-                                        icon = {
-                                            Icon(
-                                                imageVector = if(isSelected) {
-                                                    item.selectedIcon
-                                                } else item.unselectedIcon,
-                                                contentDescription = item.title
-                                            )
-                                        },
-                                        onClick = {
-                                            rootNavController.navigate(item.target) {
-                                                popUpTo(rootNavController.graph.findStartDestination().id) {
-                                                    saveState = true
-                                                }
-                                                launchSingleTop = true
-                                                restoreState = true
+                    containerColor = MaterialTheme.colorScheme.background,
+                    bottomBar = {
+                        NavigationBar {
+                            items.forEach { item ->
+                                val isSelected = item.title.lowercase() ==
+                                        navBackStackEntry?.destination?.route
+                                NavigationBarItem(
+                                    selected = isSelected,
+                                    label = {
+                                        Text(text = item.title)
+                                    },
+                                    icon = {
+                                        Icon(
+                                            imageVector = if (isSelected) {
+                                                item.selectedIcon
+                                            } else item.unselectedIcon,
+                                            contentDescription = item.title
+                                        )
+                                    },
+                                    onClick = {
+                                        rootNavController.navigate(item.target) {
+                                            popUpTo(rootNavController.graph.findStartDestination().id) {
+                                                saveState = true
                                             }
+                                            launchSingleTop = true
+                                            restoreState = true
                                         }
-                                    )
+                                    }
+                                )
 
-
-                                }
 
                             }
+
                         }
-                    ) { padding ->
-                        NavHost(rootNavController, startDestination = Target.NavHostHome) {
-                            composable<Target.NavHostHome> {
-                                HomeNavHost()
-                            }
-                            composable<Target.NavHostSettings> {
-                                SettingsNavHost()
-                            }
-                            composable<Target.NavHostManageFunds> {
-                                ManageFundsNavHost()
-                            }
-                        }
-
                     }
+                ) { padding ->
+                    NavHost(
+                        rootNavController,
+                        startDestination = Target.NavHostHome
+                    ) {
+                        composable<Target.NavHostHome> {
+                            HomeNavHost()
+                        }
+                        composable<Target.NavHostSettings> {
+                            SettingsNavHost()
+                        }
+                        composable<Target.NavHostManageFunds> {
+                            ManageFundsNavHost()
+                        }
+                    }
+
                 }
+
             }
         }
     }
@@ -109,7 +111,10 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun HomeNavHost() {
     val homeNavController = rememberNavController()
-    NavHost(homeNavController, Target.ScreenHome) {
+    NavHost(
+        homeNavController,
+        Target.ScreenHome
+    ) {
         composable<Target.ScreenHome> {
             GenericScreen(
                 text = "Home Screen",
@@ -133,7 +138,10 @@ fun HomeNavHost() {
 @Composable
 fun SettingsNavHost() {
     val settingsNavController = rememberNavController()
-    NavHost(settingsNavController, Target.ScreenSettings) {
+    NavHost(
+        settingsNavController,
+        Target.ScreenSettings
+    ) {
         composable<Target.ScreenSettings> {
             GenericScreen(
                 text = "Settings Screen",
@@ -156,7 +164,10 @@ fun SettingsNavHost() {
 @Composable
 fun ManageFundsNavHost() {
     val manageFundsNavController = rememberNavController()
-    NavHost(manageFundsNavController, Target.ScreenManageFunds) {
+    NavHost(
+        manageFundsNavController,
+        Target.ScreenManageFunds
+    ) {
         composable<Target.ScreenManageFunds> {
             GenericScreen(
                 text = "Manage Funds Screen",
@@ -178,23 +189,31 @@ fun ManageFundsNavHost() {
 
 sealed class Target {
     @Serializable
-    data object NavHostHome: Target()
+    data object NavHostHome : Target()
+
     @Serializable
-    data object ScreenHome: Target()
+    data object ScreenHome : Target()
+
     @Serializable
     data class ScreenAccountDetails(val accountId: Int) : Target()
+
     @Serializable
-    data object NavHostSettings: Target()
+    data object NavHostSettings : Target()
+
     @Serializable
-    data object ScreenSettings: Target()
+    data object ScreenSettings : Target()
+
     @Serializable
-    data object ScreenSettingDetails: Target()
+    data object ScreenSettingDetails : Target()
+
     @Serializable
-    data object NavHostManageFunds: Target()
+    data object NavHostManageFunds : Target()
+
     @Serializable
-    data object ScreenManageFunds: Target()
+    data object ScreenManageFunds : Target()
+
     @Serializable
-    data object ScreenManageFundDetails: Target()
+    data object ScreenManageFundDetails : Target()
 }
 
 @Composable
