@@ -27,7 +27,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.ip.mobile.feature_home.HomeNavHost
-import com.ip.mobile.feature_managefunds.ManageFundsNavHost
+import com.ip.mobile.feature_manage_funds.ManageFundsNavHost
 import com.ip.mobile.feature_settings.SettingsNavHost
 import com.ip.mobile.ui.theme.IpMobileTheme
 
