@@ -1,10 +1,11 @@
-package com.ip.mobile
+package com.ip.mobile.feature_home
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.ip.mobile.Target
 
 @Composable
 fun HomeNavHost() {
