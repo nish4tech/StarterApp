@@ -4,24 +4,24 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ip.mobile.Target
+import com.ip.mobile.NavTarget
 
 @Composable
 fun ManageFundsNavHost() {
     val manageFundsNavController = rememberNavController()
     NavHost(
         manageFundsNavController,
-        Target.ScreenManageFunds
+        NavTarget.ScreenManageFunds
     ) {
-        composable<Target.ScreenManageFunds> {
+        composable<NavTarget.ScreenManageFunds> {
             ManageFundsScreen(
                 onNextClick = {
-                    manageFundsNavController.navigate(Target.ScreenManageFundDetails)
+                    manageFundsNavController.navigate(NavTarget.ScreenManageFundDetails)
                 }
             )
         }
 
-        composable<Target.ScreenManageFundDetails> {
+        composable<NavTarget.ScreenManageFundDetails> {
             ManageFundsDetailsScreen()
         }
     }

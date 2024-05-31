@@ -2,31 +2,31 @@ package com.ip.mobile
 
 import kotlinx.serialization.Serializable
 
-sealed class Target {
+sealed class NavTarget {
     @Serializable
-    data object NavHostHome : Target()
+    data object NavHostHome : NavTarget()
 
     @Serializable
-    data object ScreenHome : Target()
+    data object ScreenHome : NavTarget()
 
     @Serializable
-    data class ScreenAccountDetails(val accountId: Int) : Target()
+    data class ScreenAccountDetails(val accountId: Int) : NavTarget()
 
     @Serializable
-    data object NavHostSettings : Target()
+    data object NavHostSettings : NavTarget()
 
     @Serializable
-    data object ScreenSettings : Target()
+    data object ScreenSettings : NavTarget()
 
     @Serializable
-    data object ScreenSettingDetails : Target()
+    data object ScreenSettingDetails : NavTarget()
 
     @Serializable
-    data object NavHostManageFunds : Target()
+    data object NavHostManageFunds : NavTarget()
 
     @Serializable
-    data object ScreenManageFunds : Target()
+    data object ScreenManageFunds : NavTarget()
 
     @Serializable
-    data object ScreenManageFundDetails : Target()
+    data object ScreenManageFundDetails : NavTarget()
 }

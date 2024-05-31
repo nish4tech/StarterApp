@@ -5,25 +5,25 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
-import com.ip.mobile.Target
+import com.ip.mobile.NavTarget
 
 @Composable
 fun HomeNavHost() {
     val homeNavController = rememberNavController()
     NavHost(
         homeNavController,
-        Target.ScreenHome
+        NavTarget.ScreenHome
     ) {
-        composable<Target.ScreenHome> {
+        composable<NavTarget.ScreenHome> {
             HomeScreen(
                 onNextClick = {
-                    homeNavController.navigate(Target.ScreenAccountDetails(10))
+                    homeNavController.navigate(NavTarget.ScreenAccountDetails(10))
                 }
             )
         }
 
-        composable<Target.ScreenAccountDetails> {
-            val args = it.toRoute<Target.ScreenAccountDetails>()
+        composable<NavTarget.ScreenAccountDetails> {
+            val args = it.toRoute<NavTarget.ScreenAccountDetails>()
             AccountDetailsScreen(id = args.accountId)
         }
     }

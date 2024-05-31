@@ -4,23 +4,23 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.ip.mobile.Target
+import com.ip.mobile.NavTarget
 
 @Composable
 fun SettingsNavHost() {
     val settingsNavController = rememberNavController()
     NavHost(
         settingsNavController,
-        Target.ScreenSettings
+        NavTarget.ScreenSettings
     ) {
-        composable<Target.ScreenSettings> {
+        composable<NavTarget.ScreenSettings> {
             SettingsScreen(
                 onNextClick = {
-                    settingsNavController.navigate(Target.ScreenSettingDetails)
+                    settingsNavController.navigate(NavTarget.ScreenSettingDetails)
                 }
             )
         }
-        composable<Target.ScreenSettingDetails> {
+        composable<NavTarget.ScreenSettingDetails> {
             SettingsDetailsScreen()
         }
     }
