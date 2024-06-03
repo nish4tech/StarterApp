@@ -3,6 +3,13 @@ package com.ip.mobile
 import kotlinx.serialization.Serializable
 
 sealed class NavTarget {
+
+    @Serializable
+    data object ScreenLogin : NavTarget()
+
+    @Serializable
+    data object NavHostLauncher : NavTarget()
+
     @Serializable
     data object NavHostHome : NavTarget()
 

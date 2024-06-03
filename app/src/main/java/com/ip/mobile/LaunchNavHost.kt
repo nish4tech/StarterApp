@@ -28,7 +28,7 @@ import com.ip.mobile.feature_manage_funds.ManageFundsNavHost
 import com.ip.mobile.feature_settings.SettingsNavHost
 
 @Composable
-fun LaunchScreen() {
+fun LaunchNavHost() {
     val rootNavController = rememberNavController()
     val navBackStackEntry by rootNavController.currentBackStackEntryAsState()
 

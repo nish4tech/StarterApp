@@ -21,7 +21,9 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(
+    onNextClick: () -> Unit
+) {
     var username by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
@@ -58,9 +60,7 @@ fun LoginScreen() {
 
         Button(
             onClick = {
-                // TODO: Implement login logic here
-                // For example, you can check if the username and password are valid
-                // and navigate to the next screen if they are.
+                onNextClick()
             },
             enabled = username.isNotBlank() && password.isNotBlank()
         ) {
