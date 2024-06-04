@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.ip.mobile.common.navigateWithPopUp
-import com.ip.mobile.feature_onboarding.LoginScreen
+import com.ip.mobile.onboarding.LoginScreen
 
 @Composable
 fun StarterNavHost() {

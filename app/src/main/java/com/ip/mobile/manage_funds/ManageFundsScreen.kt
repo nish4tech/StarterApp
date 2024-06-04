@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_settings
+package com.ip.mobile.manage_funds
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -12,9 +12,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
-
 @Composable
-fun SettingsScreen(
+fun ManageFundsScreen(
     onNextClick: () -> Unit
 ) {
     Column(
@@ -23,7 +22,7 @@ fun SettingsScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "It is Settings Screen")
+        Text(text = "It is Manage Funds Screen")
         Spacer(Modifier.height(16.dp))
         Button(onClick = onNextClick) {
             Text("Next")

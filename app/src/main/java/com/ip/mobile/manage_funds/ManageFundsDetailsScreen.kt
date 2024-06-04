@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_settings
+package com.ip.mobile.manage_funds
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,13 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun SettingsDetailsScreen() {
+fun ManageFundsDetailsScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Settings Details Screen")
+        Text(text = "Manage Funds Details Screen")
     }
 }

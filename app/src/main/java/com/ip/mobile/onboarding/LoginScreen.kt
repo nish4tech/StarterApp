@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_onboarding
+package com.ip.mobile.onboarding
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

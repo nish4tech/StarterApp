@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_manage_funds
+package com.ip.mobile.home
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -9,13 +9,13 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 
 @Composable
-fun ManageFundsDetailsScreen() {
+fun AccountDetailsScreen(id: Int) {
     Column(
         modifier = Modifier
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Text(text = "Manage Funds Details Screen")
+        Text(text = "Account Details Screen with id $id")
     }
 }

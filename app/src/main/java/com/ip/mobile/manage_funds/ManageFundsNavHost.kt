@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_manage_funds
+package com.ip.mobile.manage_funds
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost

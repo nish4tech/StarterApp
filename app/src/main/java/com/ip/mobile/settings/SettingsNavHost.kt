@@ -1,4 +1,4 @@
-package com.ip.mobile.feature_settings
+package com.ip.mobile.settings
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
